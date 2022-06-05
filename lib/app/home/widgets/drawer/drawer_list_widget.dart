@@ -1,12 +1,10 @@
+import 'package:desafio_1/app/home/controllers/home_controller.dart';
 import 'package:flutter/material.dart';
 
 List<Map> drawerItems = [
-  {'icon': Icons.home, 'title': 'Adoption'},
-  {'icon': Icons.mail, 'title': 'Donation'},
-  {'icon': Icons.add, 'title': 'Add pet'},
-  {'icon': Icons.favorite, 'title': 'Favorites'},
-  {'icon': Icons.mail, 'title': 'Messages'},
-  {'icon': Icons.home, 'title': 'Profile'},
+  {'icon': Icons.home, 'title': 'Adoption', 'index': 0},
+  {'icon': Icons.mail, 'title': 'Donation', 'index': 1},
+  {'icon': Icons.add, 'title': 'Add pet', 'index': 2},
 ];
 
 class DrawerListWidget extends StatefulWidget {
@@ -22,6 +20,7 @@ class _DrawerListWidgetState extends State<DrawerListWidget> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final homeController = HomeController.of(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: drawerItems
@@ -36,10 +35,12 @@ class _DrawerListWidgetState extends State<DrawerListWidget> {
                     onTap: () {
                       setState(() {
                         titleSelected = item['title'];
+                        homeController.setIndexPage(item['index']);
                       });
                     },
                     shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10)),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
                     selected: titleSelected == item['title'],
                     selectedColor: theme.colorScheme.onPrimary,
                   )),

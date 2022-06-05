@@ -4,6 +4,8 @@ import 'package:desafio_1/app/home/pages/adoption/widgets/adoption_list_widget.d
 import 'package:flutter/material.dart';
 
 class AdoptionPage extends StatefulWidget {
+  static const int index = 0;
+
   const AdoptionPage({Key? key}) : super(key: key);
 
   @override
