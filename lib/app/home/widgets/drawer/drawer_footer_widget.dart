@@ -1,3 +1,4 @@
+import 'package:desafio_1/app/home/controllers/app_controller.dart';
 import 'package:flutter/material.dart';
 
 class DrawerFooterWidget extends StatelessWidget {
@@ -6,6 +7,7 @@ class DrawerFooterWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final appController = AppController.of(context);
     return IntrinsicHeight(
       child: Material(
         color: Colors.transparent,
@@ -24,20 +26,29 @@ class DrawerFooterWidget extends StatelessWidget {
               child: Text(
                 "Settings",
                 style: TextStyle(
-                    color: theme.colorScheme.onSecondary, fontSize: 16),
+                  color: theme.colorScheme.onSecondary,
+                  fontSize: 16,
+                ),
               ),
             ),
             Container(
               width: 1,
-              margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+              margin: const EdgeInsets.symmetric(
+                horizontal: 16,
+                vertical: 4,
+              ),
               color: theme.colorScheme.onSecondary.withOpacity(.5),
             ),
             TextButton(
-              onPressed: () {},
+              onPressed: () {
+                appController.toggleTheme();
+              },
               child: Text(
                 "Log out",
                 style: TextStyle(
-                    color: theme.colorScheme.onSecondary, fontSize: 16),
+                  color: theme.colorScheme.onSecondary,
+                  fontSize: 16,
+                ),
               ),
             ),
           ],

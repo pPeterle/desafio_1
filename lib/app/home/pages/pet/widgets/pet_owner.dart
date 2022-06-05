@@ -1,7 +1,9 @@
+import 'package:desafio_1/app/home/models/owner.dart';
 import 'package:flutter/material.dart';
 
 class PetOwnerWidget extends StatelessWidget {
-  const PetOwnerWidget({Key? key}) : super(key: key);
+  final Owner owner;
+  const PetOwnerWidget({super.key, required this.owner});
 
   @override
   Widget build(BuildContext context) {
@@ -12,20 +14,20 @@ class PetOwnerWidget extends StatelessWidget {
       color: theme.colorScheme.surface,
       child: Column(
         mainAxisSize: MainAxisSize.min,
-        children: const [
+        children: [
           ListTile(
-            leading: CircleAvatar(),
+            leading: const CircleAvatar(),
             title: Text(
-              'endall Jenner',
-              style: TextStyle(color: Colors.black),
+              owner.name,
+              style: const TextStyle(color: Colors.black),
             ),
-            subtitle: Text('Owner'),
-            trailing: Text('May 25, 2019'),
+            subtitle: Text(owner.type),
+            trailing: Text(owner.date),
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 8),
+            padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 8),
             child: Text(
-              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+              owner.reason,
             ),
           ),
         ],

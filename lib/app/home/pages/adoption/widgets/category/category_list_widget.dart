@@ -14,13 +14,6 @@ class CategoryListWidget extends StatefulWidget {
 class _CategoryListWidgetState extends State<CategoryListWidget> {
   int selectedIndex = 0;
 
-  List<PetCategory> categories = [
-    PetCategory(
-      image: "https://cdn-icons-png.flaticon.com/512/620/620851.png",
-      name: 'Cats',
-    )
-  ];
-
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -31,7 +24,10 @@ class _CategoryListWidgetState extends State<CategoryListWidget> {
         shrinkWrap: true,
         itemCount: 30,
         itemBuilder: (context, index) {
-          final category = categories[0];
+          final category = PetCategory(
+            image: "https://cdn-icons-png.flaticon.com/512/620/620851.png",
+            name: 'Cats $index',
+          );
           return CategoryItemWidget(
             category: category,
             isSelected: selectedIndex == index,

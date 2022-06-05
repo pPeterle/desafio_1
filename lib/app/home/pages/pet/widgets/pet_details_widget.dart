@@ -24,7 +24,7 @@ class PetDetailsWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(20),
           boxShadow: [
             BoxShadow(
-              color: Colors.grey[300]!,
+              color: theme.colorScheme.background,
               blurRadius: 5,
               spreadRadius: 5,
             )

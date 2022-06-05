@@ -51,7 +51,9 @@ class PetPage extends StatelessWidget {
                       ),
                     ),
                     PetDetailsWidget(pet: pet),
-                    const PetOwnerWidget()
+                    PetOwnerWidget(
+                      owner: pet.owner,
+                    ),
                   ],
                 ),
               ),

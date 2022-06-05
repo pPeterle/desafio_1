@@ -1,3 +1,4 @@
+import 'package:desafio_1/app/home/models/owner.dart';
 import 'package:desafio_1/app/home/models/sex.dart';
 
 class Pet {
@@ -8,10 +9,12 @@ class Pet {
   final String image;
   final String location;
   final Sex sex;
+  final Owner owner;
 
   Pet({
     required this.name,
     required this.breed,
+    required this.owner,
     required this.years,
     required this.distance,
     required this.image,
