@@ -47,8 +47,10 @@ class _HomePageState extends State<HomePage> {
                     break;
                 }
 
-                displayOrder.remove(widget);
-                displayOrder.add(widget!);
+                if (widget != null) {
+                  displayOrder.remove(widget);
+                  displayOrder.add(widget);
+                }
 
                 final items = displayOrder.map(
                   (widget) => HomePageAnimationWidget(

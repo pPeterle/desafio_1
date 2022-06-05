@@ -1,12 +1,6 @@
 import 'package:desafio_1/app/home/controllers/home_controller.dart';
 import 'package:flutter/material.dart';
 
-List<Map> drawerItems = [
-  {'icon': Icons.home, 'title': 'Adoption', 'index': 0},
-  {'icon': Icons.mail, 'title': 'Donation', 'index': 1},
-  {'icon': Icons.add, 'title': 'Add pet', 'index': 2},
-];
-
 class DrawerListWidget extends StatefulWidget {
   const DrawerListWidget({Key? key}) : super(key: key);
 
@@ -16,6 +10,15 @@ class DrawerListWidget extends StatefulWidget {
 
 class _DrawerListWidgetState extends State<DrawerListWidget> {
   String? titleSelected = 'Adoption';
+
+  List<Map> drawerItems = [
+    {'icon': Icons.home, 'title': 'Adoption', 'index': 0},
+    {'icon': Icons.mail, 'title': 'Donation', 'index': 1},
+    {'icon': Icons.add, 'title': 'Add pet', 'index': 2},
+    {'icon': Icons.favorite, 'title': 'Favorites', 'index': 3},
+    {'icon': Icons.message, 'title': 'Messages', 'index': 4},
+    {'icon': Icons.person, 'title': 'Profile', 'index': 5},
+  ];
 
   @override
   Widget build(BuildContext context) {
