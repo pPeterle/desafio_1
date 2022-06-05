@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
-class HomeContainerWidget extends StatelessWidget {
+class AdoptionContainerWidget extends StatelessWidget {
   final Widget child;
-  const HomeContainerWidget({Key? key, required this.child}) : super(key: key);
+  const AdoptionContainerWidget({Key? key, required this.child})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {

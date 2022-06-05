@@ -1,45 +1,22 @@
-import 'package:desafio_1/app/home/pages/adoption/widgets/cat_item_widget.dart';
-import 'package:desafio_1/app/home/pages/adoption/widgets/category_item_widget.dart';
-import 'package:desafio_1/app/home/pages/adoption/widgets/sliver_fixed_menu_delegate.dart';
+import 'package:desafio_1/app/home/models/pet.dart';
+import 'package:desafio_1/app/home/models/sex.dart';
+import 'package:desafio_1/app/home/pages/adoption/widgets/category/category_list_widget.dart';
+import 'package:desafio_1/app/home/pages/adoption/widgets/pet/pet_item_widget.dart';
+import 'package:desafio_1/app/home/pages/adoption/widgets/sliver/sliver_fixed_menu_delegate.dart';
 import 'package:flutter/material.dart';
 
-List<Map<String, String>> categories = [
-  {
-    'name': 'Cats',
-    'iconPath': 'https://cdn-icons-png.flaticon.com/512/620/620851.png'
-  },
-  {
-    'name': 'Dogs',
-    'iconPath': 'https://cdn-icons-png.flaticon.com/512/620/620851.png'
-  },
-  {
-    'name': 'Bunnies',
-    'iconPath': 'https://cdn-icons-png.flaticon.com/512/620/620851.png'
-  },
-  {
-    'name': 'Parrots',
-    'iconPath': 'https://cdn-icons-png.flaticon.com/512/620/620851.png'
-  },
-  {
-    'name': 'Horses',
-    'iconPath': 'https://cdn-icons-png.flaticon.com/512/620/620851.png'
-  },
-  {
-    'name': 'Dogs',
-    'iconPath': 'https://cdn-icons-png.flaticon.com/512/620/620851.png'
-  },
-  {
-    'name': 'Bunnies',
-    'iconPath': 'https://cdn-icons-png.flaticon.com/512/620/620851.png'
-  },
-  {
-    'name': 'Parrots',
-    'iconPath': 'https://cdn-icons-png.flaticon.com/512/620/620851.png'
-  }
-];
+final Pet pet = Pet(
+    name: 'Sala',
+    breed: 'Abyssian cat',
+    years: '3',
+    distance: '3.6 km',
+    image: 'https://assets.stickpng.com/images/580b57fbd9996e24bc43bb8c.png',
+    sex: Sex.male,
+    location: 'Vitoria Espirito Santo');
 
 class AdoptionListWidget extends StatelessWidget {
   final ScrollController scrollController;
+
   const AdoptionListWidget({Key? key, required this.scrollController})
       : super(key: key);
 
@@ -74,26 +51,17 @@ class AdoptionListWidget extends StatelessWidget {
         SliverPersistentHeader(
           pinned: true,
           delegate: SliverFixedMenuDelegate(
-            child: Container(
-              color: theme.colorScheme.background,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                shrinkWrap: true,
-                itemCount: categories.length,
-                itemBuilder: (context, index) {
-                  final category = categories[index];
-                  return CategoryItemWidget(category: category);
-                },
-              ),
-            ),
+            child: const CategoryListWidget(),
             maxHeight: 90,
             minHeight: 90,
           ),
         ),
         SliverList(
           delegate: SliverChildBuilderDelegate(
-            (context, index) => const CatItemWidget(),
-            childCount: 100,
+            (context, index) => PetItemWidget(
+              pet: pet,
+            ),
+            childCount: 1,
           ),
         )
       ],

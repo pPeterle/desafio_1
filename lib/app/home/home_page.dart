@@ -4,15 +4,8 @@ import 'package:desafio_1/app/home/widgets/drawer/drawer_widget.dart';
 import 'package:desafio_1/app/home/widgets/home_page_animattion_widget.dart';
 import 'package:flutter/material.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
-
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  bool isDrawerOpen = false;
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {

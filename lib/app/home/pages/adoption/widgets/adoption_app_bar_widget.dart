@@ -2,7 +2,7 @@ import 'package:desafio_1/app/home/controllers/home_controller.dart';
 import 'package:flutter/material.dart';
 
 class AdoptionAppBarWidget extends StatelessWidget {
-  static const double toolbarPadding = 8;
+  static const double appBarHeight = kToolbarHeight + 8;
 
   const AdoptionAppBarWidget({Key? key}) : super(key: key);
 
@@ -10,8 +10,8 @@ class AdoptionAppBarWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final homeController = HomeController.of(context);
     return Container(
-      padding: const EdgeInsets.all(toolbarPadding),
-      height: kToolbarHeight + toolbarPadding,
+      padding: const EdgeInsets.symmetric(horizontal: 8),
+      height: appBarHeight,
       child: Row(
         children: [
           Material(

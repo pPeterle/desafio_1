@@ -1,6 +1,6 @@
-import 'package:desafio_1/app/home/widgets/drawer/widgets/drawer_app_bar_widget.dart';
-import 'package:desafio_1/app/home/widgets/drawer/widgets/drawer_footer_widget.dart';
-import 'package:desafio_1/app/home/widgets/drawer/widgets/drawer_list_widget.dart';
+import 'package:desafio_1/app/home/widgets/drawer/drawer_app_bar_widget.dart';
+import 'package:desafio_1/app/home/widgets/drawer/drawer_footer_widget.dart';
+import 'package:desafio_1/app/home/widgets/drawer/drawer_list_widget.dart';
 import 'package:flutter/material.dart';
 
 class DrawerWidget extends StatefulWidget {

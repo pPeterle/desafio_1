@@ -4,8 +4,12 @@ import 'package:flutter/material.dart';
 class HomePageAnimationWidget extends StatelessWidget {
   final Widget child;
   final int position;
-  const HomePageAnimationWidget(
-      {super.key, required this.child, this.position = 0});
+
+  const HomePageAnimationWidget({
+    super.key,
+    required this.child,
+    this.position = 0,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -15,31 +19,42 @@ class HomePageAnimationWidget extends StatelessWidget {
 
     return ValueListenableBuilder<bool>(
       valueListenable: homeController.isDrawerOpen,
-      builder: (context, value, _) {
+      builder: (context, isOpen, _) {
         final layer = (position * 10) / 100;
 
-        double width = value ? size.width * (.55 + layer) : 0;
-        double scale = value ? (.7 + layer) : 1.0;
-        double height = value ? size.height * (1 - scale) / 2 : 0;
+        double width = isOpen ? size.width * (.55 + layer) : 0;
+        double scale = isOpen ? (.7 + layer) : 1.0;
+        double height = isOpen ? size.height * (1 - scale) / 2 : 0;
 
-        return AnimatedContainer(
-          transform: Matrix4.translationValues(
-            width,
-            height,
-            0,
-          )..scale(scale),
-          duration: const Duration(milliseconds: 300),
-          curve: Curves.easeOut,
-          height: double.infinity,
-          decoration: BoxDecoration(
-            color: theme.colorScheme.surface,
-            borderRadius: BorderRadius.circular(value ? 30 : 0),
-            boxShadow: const [
-              BoxShadow(color: Colors.black26, spreadRadius: 5, blurRadius: 10),
-            ],
+        return GestureDetector(
+          onTap: () {
+            if (isOpen) {
+              homeController.toggleDrawer();
+            }
+          },
+          child: AnimatedContainer(
+            transform: Matrix4.translationValues(
+              width,
+              height,
+              0,
+            )..scale(scale),
+            duration: const Duration(milliseconds: 300),
+            curve: Curves.easeOut,
+            height: double.infinity,
+            decoration: BoxDecoration(
+              color: theme.colorScheme.surface,
+              borderRadius: BorderRadius.circular(isOpen ? 30 : 0),
+              boxShadow: const [
+                BoxShadow(
+                    color: Colors.black26, spreadRadius: 5, blurRadius: 10),
+              ],
+            ),
+            clipBehavior: Clip.hardEdge,
+            child: IgnorePointer(
+              ignoring: isOpen,
+              child: child,
+            ),
           ),
-          clipBehavior: Clip.hardEdge,
-          child: child,
         );
       },
     );
