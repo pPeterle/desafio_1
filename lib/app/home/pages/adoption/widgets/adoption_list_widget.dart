@@ -7,16 +7,12 @@ import 'package:desafio_1/app/home/pages/adoption/widgets/sliver/sliver_fixed_me
 import 'package:flutter/material.dart';
 
 class AdoptionListWidget extends StatelessWidget {
-  final ScrollController scrollController;
-
-  const AdoptionListWidget({Key? key, required this.scrollController})
-      : super(key: key);
+  const AdoptionListWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return CustomScrollView(
-      controller: scrollController,
       slivers: [
         SliverAppBar(
           leading: const Icon(Icons.search),

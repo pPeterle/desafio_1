@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AppController extends InheritedWidget {
-  final isLightTheme = ValueNotifier(false);
+  final isLightTheme = ValueNotifier(true);
 
   AppController({required super.child, super.key});
 

@@ -13,7 +13,7 @@ class PetDetailsWidget extends StatelessWidget {
       margin: const EdgeInsets.only(
         left: 16,
         right: 16,
-        top: 390,
+        top: 450 - (120 / 2),
       ),
       padding: const EdgeInsets.symmetric(
         horizontal: 20,
