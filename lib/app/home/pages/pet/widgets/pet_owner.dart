@@ -19,13 +19,15 @@ class PetOwnerWidget extends StatelessWidget {
             leading: const CircleAvatar(),
             title: Text(
               owner.name,
-              style: const TextStyle(color: Colors.black),
             ),
             subtitle: Text(owner.type),
             trailing: Text(owner.date),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 8),
+            padding: const EdgeInsets.symmetric(
+              horizontal: 20.0,
+              vertical: 8,
+            ),
             child: Text(
               owner.reason,
             ),
