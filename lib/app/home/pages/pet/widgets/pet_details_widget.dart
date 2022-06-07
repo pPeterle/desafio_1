@@ -1,4 +1,5 @@
 import 'package:desafio_1/app/home/models/pet.dart';
+import 'package:desafio_1/app/home/pages/pet/widgets/pet_image_widget.dart';
 import 'package:flutter/material.dart';
 
 class PetDetailsWidget extends StatelessWidget {
@@ -13,7 +14,7 @@ class PetDetailsWidget extends StatelessWidget {
       margin: const EdgeInsets.only(
         left: 16,
         right: 16,
-        top: 450 - (120 / 2),
+        top: PetImageWidget.backgroundPetHeight - (120 / 2),
       ),
       padding: const EdgeInsets.symmetric(
         horizontal: 20,
