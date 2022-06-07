@@ -3,13 +3,18 @@ import 'package:flutter/material.dart';
 
 class PetOwnerWidget extends StatelessWidget {
   final Owner owner;
-  const PetOwnerWidget({super.key, required this.owner});
+  final double marginTop;
+  const PetOwnerWidget({
+    super.key,
+    required this.owner,
+    this.marginTop = 0,
+  });
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Container(
-      margin: const EdgeInsets.only(top: 520),
+      margin: EdgeInsets.only(top: marginTop),
       width: MediaQuery.of(context).size.width,
       color: theme.colorScheme.surface,
       child: Column(

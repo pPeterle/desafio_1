@@ -7,7 +7,6 @@ class PetItemWidget extends StatelessWidget {
 
   const PetItemWidget({Key? key, required this.pet}) : super(key: key);
 
-  final double catHeight = 180;
   final double backgroundCatHeight = 160;
   final double backgroundTextHeight = 120;
 
@@ -30,7 +29,9 @@ class PetItemWidget extends StatelessWidget {
           children: [
             Container(
               height: backgroundTextHeight,
-              margin: const EdgeInsets.only(bottom: 20),
+              margin: EdgeInsets.only(
+                bottom: (backgroundCatHeight - backgroundTextHeight) / 2,
+              ),
               decoration: BoxDecoration(
                 color: theme.colorScheme.surface,
                 borderRadius: BorderRadius.circular(20),
@@ -56,7 +57,7 @@ class PetItemWidget extends StatelessWidget {
                           tag: pet.image + pet.name,
                           child: Image.network(
                             pet.image,
-                            height: catHeight,
+                            height: 180,
                           ),
                         ),
                       ),
@@ -66,7 +67,9 @@ class PetItemWidget extends StatelessWidget {
                 Expanded(
                   child: Container(
                     height: backgroundTextHeight,
-                    margin: const EdgeInsets.only(bottom: 20),
+                    margin: EdgeInsets.only(
+                      bottom: (backgroundCatHeight - backgroundTextHeight) / 2,
+                    ),
                     padding: const EdgeInsets.only(left: 8),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,

@@ -1,5 +1,5 @@
 import 'package:desafio_1/app/home/models/pet.dart';
-import 'package:desafio_1/app/home/pages/pet/widgets/pet_list.dart';
+import 'package:desafio_1/app/home/pages/pet/widgets/pet_list_widget.dart';
 import 'package:flutter/material.dart';
 
 import 'widgets/pet_actions_widget.dart';

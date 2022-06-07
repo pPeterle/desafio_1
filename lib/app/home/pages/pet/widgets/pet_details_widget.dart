@@ -3,22 +3,26 @@ import 'package:flutter/material.dart';
 
 class PetDetailsWidget extends StatelessWidget {
   final Pet pet;
-  const PetDetailsWidget({Key? key, required this.pet}) : super(key: key);
+  final double marginTop;
+  const PetDetailsWidget({
+    Key? key,
+    required this.pet,
+    this.marginTop = 0,
+  }) : super(key: key);
+
+  static const height = 140;
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Container(
       height: 120,
-      margin: const EdgeInsets.only(
+      margin: EdgeInsets.only(
         left: 16,
         right: 16,
-        top: 450 - (120 / 2),
+        top: marginTop - height / 2,
       ),
-      padding: const EdgeInsets.symmetric(
-        horizontal: 20,
-        vertical: 20,
-      ),
+      padding: const EdgeInsets.symmetric(horizontal: 20),
       decoration: BoxDecoration(
           color: theme.colorScheme.surface,
           borderRadius: BorderRadius.circular(20),

@@ -14,7 +14,7 @@ class AdoptionPage extends StatelessWidget {
       children: const [
         AdoptionAppBarWidget(),
         Positioned.fill(
-          top: kToolbarHeight + 8,
+          top: AdoptionAppBarWidget.appBarHeight,
           child: AdoptionContainerWidget(
             child: AdoptionListWidget(),
           ),
