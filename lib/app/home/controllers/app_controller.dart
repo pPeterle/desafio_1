@@ -7,7 +7,7 @@ class AppController extends InheritedWidget {
 
   @override
   bool updateShouldNotify(covariant InheritedWidget oldWidget) {
-    return true;
+    return false;
   }
 
   toggleTheme() {
