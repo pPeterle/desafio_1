@@ -33,6 +33,7 @@ class PetDetailsWidget extends StatelessWidget {
               spreadRadius: 5,
             )
           ]),
+      alignment: Alignment.center,
       child: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
