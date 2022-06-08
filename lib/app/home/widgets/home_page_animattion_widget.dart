@@ -11,6 +11,8 @@ class HomePageAnimationWidget extends StatelessWidget {
     this.position = 0,
   });
 
+  static const maxLayer = 3;
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -20,7 +22,8 @@ class HomePageAnimationWidget extends StatelessWidget {
     return ValueListenableBuilder<bool>(
       valueListenable: homeController.isDrawerOpen,
       builder: (context, isOpen, _) {
-        final layer = (position * 10) / 100;
+        final index = (position - maxLayer);
+        final layer = (index * 10) / 100;
 
         double width = isOpen ? size.width * (.55 + layer) : 0;
         double scale = isOpen ? (.7 + layer) : 1.0;
