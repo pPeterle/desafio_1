@@ -33,41 +33,40 @@ class PetDetailsWidget extends StatelessWidget {
               spreadRadius: 5,
             )
           ]),
-      child: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  pet.name,
-                  style: theme.textTheme.headline4
-                      ?.copyWith(fontWeight: FontWeight.bold),
-                ),
-                const Icon(Icons.male),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(pet.breed),
-                Text("${pet.years} years old"),
-              ],
-            ),
-            const SizedBox(height: 8),
-            Row(
-              children: [
-                const Icon(
-                  Icons.location_on,
-                  size: 16,
-                ),
-                const SizedBox(width: 4),
-                Text(pet.location, style: theme.textTheme.caption)
-              ],
-            ),
-          ],
-        ),
+      alignment: Alignment.center,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                pet.name,
+                style: theme.textTheme.headline4
+                    ?.copyWith(fontWeight: FontWeight.bold),
+              ),
+              const Icon(Icons.male),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(pet.breed),
+              Text("${pet.years} years old"),
+            ],
+          ),
+          const SizedBox(height: 8),
+          Row(
+            children: [
+              const Icon(
+                Icons.location_on,
+                size: 16,
+              ),
+              const SizedBox(width: 4),
+              Text(pet.location, style: theme.textTheme.caption)
+            ],
+          ),
+        ],
       ),
     );
   }

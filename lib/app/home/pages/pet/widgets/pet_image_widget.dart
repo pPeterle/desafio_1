@@ -5,7 +5,7 @@ class PetImageWidget extends StatelessWidget {
   final Pet pet;
   const PetImageWidget({Key? key, required this.pet}) : super(key: key);
 
-  static const double backgroundPetHeight = 450;
+  static const double height = 450;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class PetImageWidget extends StatelessWidget {
         Container(
           color: theme.colorScheme.background,
           width: double.infinity,
-          height: backgroundPetHeight,
+          height: height,
         ),
         Align(
           alignment: Alignment.topCenter,
